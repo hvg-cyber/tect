@@ -1,0 +1,32 @@
+/* src\vs\base\browser\ui\codicons\codicon\codicon.css */
+@font-face {
+    font-family: "codicon";
+    src: url("../../codicon.ttf");
+}
+
+/* custom */
+.container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: gray;
+    width: fit-content;
+    cursor: default;
+    font-family: sans-serif;
+    font-size: 20px;
+    user-select: none;
+}
+.container .button {
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.container .button:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+.container .codicon {
+    font-family: 'codicon';
+}
