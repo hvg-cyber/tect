@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <style>
+        /* src\vs\workbench\browser\media\style.css */
+        .monaco-workbench { /* 58 */
+            touch-action: none;
+            overscroll-behavior: none;
+        }
+        html {
+            overscroll-behavior: none;
+        }
+        /* custom */
+        body {
+            margin: 0;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+        }
+        .monaco-workbench {
+            background-color: lightgray;
+        }
+        .box {
+            font-family: sans-serif;
+            font-size: 30px;
+            background-color: gray;
+            width: 100px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*
+            TODO: VSC sets its via JS. Why?
+        */
+        const workbench = document.createElement('div')
+        workbench.classList.add('monaco-workbench')
+        workbench.style.height = innerHeight + 'px'
+        workbench.style.width = innerWidth + 'px'
+        document.body.append(workbench)
+
+        const box = document.createElement('div')
+        box.classList.add('box')
+        workbench.append(box)
+        function onResize() {
+            box.textContent = visualViewport.scale.toFixed(2)
+        }
+        onResize()
+        window.visualViewport.onresize = onResize
+    </script>
+</body>
+</html>
