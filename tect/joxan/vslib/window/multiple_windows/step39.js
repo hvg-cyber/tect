@@ -1,0 +1,5 @@
+/*
+It is important to maintain consistent state of the program
+when interacting with multiple windows.
+This program shows how this is done in VS Code
+*/
