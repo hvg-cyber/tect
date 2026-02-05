@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .widget {
+            font-family: sans-serif;
+            font-size: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .bin_number {
+            display: flex;
+            gap: 5px;
+            align-items: end;
+            cursor: default;
+            user-select: none;
+        }
+        .byte {
+            display: flex;
+            gap: 5px;
+        }
+        .bit {
+            background-color: gray;
+            border-radius: 10px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .point {
+            font-size: 50px;
+        }
+        .sum_container {
+            font-family: monospace;
+            display: flex;
+            font-size: 20px;
+        }
+        .col_left {
+            width: 15ch;
+        }
+        .row {
+            white-space: pre-wrap;
+            display: flex;
+        }
+        .separator {
+            height: 1px;
+            width: 12ch;
+            background-color: black;
+        }
+        sup {
+            font-size: 12px;
+        }
+        input {
+            width: 12ch;
+        }
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="widget">
+        <div class="bin_number">
+            <div class="byte int_part">
+                <div class="bit">0</div>
+                <div class="bit">0</div>
+                <div class="bit">0</div>
+                <div class="bit">0</div>
+                <div class="bit">0</div>
+                <div class="bit">0</div>
+                <div class="bit">0</div>
+                <div class="bit">0</div>
+            </div>
+            <div class="point">.</div>
+            <div class="byte frac_part">
+                <div class="bit">0</div>
+                <div class="bit">0</div>
+                <div class="bit">0</div>
+                <div class="bit">0</div>
+                <div class="bit">0</div>
+                <div class="bit">0</div>
+                <div class="bit">0</div>
+                <div class="bit">0</div>
+            </div>
+        </div>
+        <div class="controls">
+            <button class="shift_left">&lt;&lt;</button>
+            <button class="shift_right">&gt;&gt;</button>
+            <button class="all_ones">All 1's</button>
+            <button class="all_zeros">All 0's</button>
+            <button class="flip_bits">Flip bits</button>
+            <input type="number" class="dec_number" value="0" min="0" max="255.99609375" step="any">
+        </div>
+        <div class="sum_container">
+            <div class="col_left"></div>
+            <div class="col_right"></div>
+        </div>
+    </div>
+    <!-- <script src="0explainer.js"></script> -->
+    <script src="BinaryFraction.js"></script>
+    <!-- <script src="BinaryFraction.test.js"></script> -->
+    <script src="script.js"></script>
+</body>
+</html>
