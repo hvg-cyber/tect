@@ -1,0 +1,17 @@
+# Simple build script
+
+# Check if at least one argument was provided
+if [ $# -eq 0 ]; then
+    echo "Error: No argument provided." >&2
+    echo "Usage: $0 <string>" >&2
+    exit 1
+fi
+
+# gcc hello.c -o hello
+# ./hello
+
+# gcc "${1}.c" -o "${1}"
+# "./${1}"
+
+gcc ${1}
+./a.out
